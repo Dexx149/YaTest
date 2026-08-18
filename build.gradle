@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.12.0'
+}
+
+group = 'ya.test'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.10.1'
+    allureVersion = '2.25.0'
+    restAssuredVersion = '5.4.0'
+    dataFakerVeersion = '2.2.2'
+    assertjVersion = '3.25.3'
+    jacksonVersion ='2.18.2'
+}
+
+dependencies {
+    // JUnit 5
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
+
+    // Allure
+    implementation "io.qameta.allure:allure-junit5:${allureVersion}"
+    implementation "io.qameta.allure:allure-rest-assured:${allureVersion}"
+
+    // Логирование
+    implementation "org.slf4j:slf4j-simple:2.0.9"
+
+    // AssertJ
+    testImplementation "org.assertj:assertj-core:${assertjVersion}"
+
+    // Faker
+    testImplementation "net.datafaker:datafaker:${dataFakerVeersion}"
+
+    // REST Assured
+    testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
+
+    //Jackson
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
+}
+
+
+test {
+    useJUnitPlatform()
+}
