@@ -26,11 +26,11 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
 
     // Allure
-    implementation "io.qameta.allure:allure-junit5:${allureVersion}"
-    implementation "io.qameta.allure:allure-rest-assured:${allureVersion}"
+    testImplementation "io.qameta.allure:allure-junit5:${allureVersion}"
+    testImplementation "io.qameta.allure:allure-rest-assured:${allureVersion}"
 
     // Логирование
-    implementation "org.slf4j:slf4j-simple:2.0.9"
+    testImplementation "org.slf4j:slf4j-simple:2.0.9"
 
     // AssertJ
     testImplementation "org.assertj:assertj-core:${assertjVersion}"
@@ -42,8 +42,11 @@ dependencies {
     testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
 
     //Jackson
-    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
+    testImplementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    testImplementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
+
+    //Awaitility
+    testImplementation 'org.awaitility:awaitility:4.2.1'
 }
 
 

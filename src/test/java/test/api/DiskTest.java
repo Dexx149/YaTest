@@ -1,10 +1,8 @@
 package test.api;
 
-import io.restassured.response.Response;
+import assertions.ApiAssert;
 import org.junit.jupiter.api.Test;
 import service.DiskService;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class DiskTest {
 
@@ -12,6 +10,6 @@ public class DiskTest {
 
     @Test
     public void shouldReturnDiskInfo() {
-        assertThat(diskService.getInfo().statusCode()).isEqualTo(200);
+        ApiAssert.assertThat(diskService.getInfo()).hasStatus(200);
     }
 }
